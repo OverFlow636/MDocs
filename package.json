@@ -14,7 +14,7 @@
     "express": "^4.14.0",
     "github": "^6.1.0",
     "highlight.js": "^9.8.0",
-    "marked": "^0.3.6",
+    "marked": "git+https://github.com/overflow636/marked.git",
     "md5": "^2.2.1",
     "request": "^2.79.0"
   },
