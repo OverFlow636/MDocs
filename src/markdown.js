@@ -6,9 +6,15 @@ const marked   = require('marked');
 var navTree = {};
 var renderer = new marked.Renderer({
   plugins: {
+
     alert(params, block) {
       block = marked(block, {plugins: true, renderer: renderer});
       return `<div class="alert alert-${params}" role="alert">${block}</div>`;
+    },
+
+    label(params) {
+      params = params.split(', ');
+      return `<span class="label label-${params[0]}">${params[1]}</span>`
     }
   },
 });
@@ -155,9 +161,13 @@ function fixName(pre) {
   return pre;
 }
 
+function compile(md) {
+  return marked(md, {plugins: true, renderer: renderer});
+}
 
 module.exports = {
   buildPages,
   getNavigation,
+  compile,
   marked
 };

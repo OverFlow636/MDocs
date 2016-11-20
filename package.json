@@ -1,13 +1,12 @@
 {
-  "name": "d0cs",
+  "name": "MDocs",
   "version": "1.0.0",
-  "description": "",
+  "description": "Build HTML documentation from markdown files hosted directly on github.",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.2",

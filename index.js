@@ -51,6 +51,18 @@ app.all('/', function (req, res) {
   res.send('<form method="post">Path: <input type="text" name="path"><input type="submit"></form>')
 });
 
+app.get('/dev', function(req, res) {
+
+  var out = fs.readFileSync('./template.html').toString();
+
+  var html = markdown.compile(fs.readFileSync('./' + req.query.path ).toString());
+  var page = `<section>${html}</section>`;
+
+  out = out.replace('#SECTIONS#', page);
+
+  res.type('html').send(out);
+});
+
 app.get('/test', function (req, res) {
 
   var out        = fs.readFileSync('./template.html').toString();
