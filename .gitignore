@@ -1,0 +1,10 @@
+output.json
+node_modules/
+.idea
+
+# hide private source files of the non open source theme
+gruntfile.js
+webroot/vendors
+webroot/css/theDocs/
+webroot/css/theDocs.scss
+webroot/css/theDocs.css
